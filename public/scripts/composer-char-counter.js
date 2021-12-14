@@ -1,17 +1,3 @@
-// $(document).ready(function() {
-//   $(function() {
-//     wordcounter();
-//   });
-
-//   const wordcounter = function() {
-//     const $inputfield = $('#tweet-text');
-//     $inputfield.on('input', function() {
-//       const $counter = 140 - $('textarea', this).val().length;
-//       $('.counter', this).text($counter);
-//     });
-//   };
-// });
-
 $(document).ready(function() {
   
   let counter = $('.content').find('.counter');
