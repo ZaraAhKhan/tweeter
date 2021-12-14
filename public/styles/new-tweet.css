@@ -1,0 +1,22 @@
+.new-tweet {
+  width:100%
+}
+
+textarea{
+  outline:0;
+  border-width: 0 0 4px;
+  border-color:#545149;
+  background-color: #f4f1ec;
+  width:100%;
+}
+
+.counter {
+  display:flex;
+  
+}
+
+button{
+  background-color: #4056A1;
+  font-family:"Bungee",sans-serif;
+  color:white;
+}
