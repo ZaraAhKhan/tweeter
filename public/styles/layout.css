@@ -22,7 +22,29 @@ body {
 }
 #logo {
   font-family:"Bungee",sans-serif;
+  padding-left: 1.5em;
 }
+.nav-bar {
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  vertical-align: center;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.navigation{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding-right:1.5em
+}
+
+.fa-angle-double-down {
+  color:red;
+}
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
