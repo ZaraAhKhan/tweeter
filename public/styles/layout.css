@@ -19,6 +19,8 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family:"Source Sans Pro",sans-serif;
+  display:flex;
+  flex-direction:column;
 }
 #logo {
   font-family:"Bungee",sans-serif;
@@ -46,6 +48,11 @@ body {
   color:red;
 }
 
+.container{
+  width: 90%;
+  display:flex;
+  align-self: center;
+}
 
 
 
