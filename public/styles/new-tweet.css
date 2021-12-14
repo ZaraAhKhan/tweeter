@@ -16,6 +16,9 @@ textarea{
   justify-content:space-between;
   font-family:"Bungee",sans-serif;
 }
+.my-class {
+  color:red;
+}
 
 button{
   background-color: #4056A1;
