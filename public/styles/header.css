@@ -3,6 +3,7 @@ header{
   width:100%;
   background-color:#D6D9E8;
   background-image:url("https://www.transparenttextures.com/patterns/black-thread.png");
+  top:0%;
 }
 .image, .name {
   display: flex;

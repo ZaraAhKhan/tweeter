@@ -22,31 +22,7 @@ body {
   display:flex;
   flex-direction:column;
 }
-#logo {
-  font-family:"Bungee",sans-serif;
-  padding-left: 1.5em;
-}
-.nav-bar {
-  height: 120px;
-  width: 100%;
-  background-color: #4056A1;
-  color: #FFFFFF;
-  vertical-align: center;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  z-index:5;
-}
-.navigation{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  padding-right:1.5em
-}
 
-.fa-angle-double-down {
-  color:red;
-}
 
 .container{
   width: 90%;
