@@ -4,7 +4,7 @@
 }
 .nav-bar {
   height: 120px;
-  width: 100%;
+  width: 100vw;
   background-color: #4056A1;
   color: #FFFFFF;
   display:flex;
