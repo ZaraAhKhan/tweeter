@@ -33,6 +33,7 @@ body {
   display:flex;
   justify-content:space-between;
   align-items:center;
+  z-index:1;
 }
 .navigation{
   display:flex;
@@ -44,6 +45,8 @@ body {
 .fa-angle-double-down {
   color:red;
 }
+
+
 
 
 /*
