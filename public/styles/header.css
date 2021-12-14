@@ -1,0 +1,12 @@
+header{
+  height:400px;
+  width:100%;
+  background-color:#D6D9E8;
+  background-image:url("https://www.transparenttextures.com/patterns/black-thread.png");
+}
+.image, .name {
+  display: flex;
+  justify-content: center;
+}
+
+
