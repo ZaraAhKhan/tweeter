@@ -1,5 +1,6 @@
 .new-tweet {
-  width:100%
+  width:100%;
+  font-weight:600 ;
 }
 
 textarea{
@@ -10,13 +11,15 @@ textarea{
   width:100%;
 }
 
-.counter {
+.button-counter {
   display:flex;
-  
+  justify-content:space-between;
+  font-family:"Bungee",sans-serif;
 }
 
 button{
   background-color: #4056A1;
-  font-family:"Bungee",sans-serif;
   color:white;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
