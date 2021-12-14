@@ -1,0 +1,17 @@
+#tweet-container {
+  border:solid;
+  border-color: #545149;
+}
+
+
+
+hr{
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 4px solid #545149;
+  margin: 1em 0;
+  padding: 0;
+  width:98%;
+  margin-left:12px
+}
