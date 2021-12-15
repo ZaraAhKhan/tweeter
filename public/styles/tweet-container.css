@@ -4,6 +4,10 @@
   margin-top: 50px; 
   border-width:4px ;
 }
+#tweet-container:hover {
+  box-shadow: 10px 5px 5px #9CACD0;
+}
+
 
 .tweet-header {
   display: flex;
@@ -18,16 +22,24 @@
 .twitter-img {
   display:flex;
   align-self: flex-start;
+  padding-left:10px;
   
 }
 #twitter-name {
-  padding-left:15px;
+  padding-left:25px;
   align-self: center;
+  font-weight:300;
+  
 }
 #twitter-handle
 {
   padding-right:15px;
   align-self: center;
+  opacity:0.5;
+}
+#tweet {
+  padding-left: 25px;
+  padding-top:25px;
 }
 
 hr{
@@ -39,4 +51,21 @@ hr{
   padding: 0;
   width:98%;
   margin-left:10px
+}
+
+.tweet-footer{
+  display:flex;
+  justify-content: space-between;
+  padding-bottom: 25px;
+  padding-right: 40px;
+  padding-left: 40px;
+  align-items:flex-start;
+  font-size:18px;
+}
+
+.fa-solid {
+  color: #4056A1;
+}
+.fa-solid:hover {
+  color: olive;
 }
