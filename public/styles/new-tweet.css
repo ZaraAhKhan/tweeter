@@ -20,12 +20,12 @@ textarea{
   color:red;
 }
 
-button{
+#submit-button{
   background-color: #4056A1;
   color:white;
   padding-top: 6px;
   padding-bottom: 6px;
 }
-button:hover{
+#submit-button:hover{
   box-shadow: 10px 5px 5px #9CACD0;
 }

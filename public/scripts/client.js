@@ -71,6 +71,18 @@ $(document).ready(function() {
   // get the element where the new element needs to be attached
   const tweetContainer = $('#tweet-container');
   renderTweetElements(tweetContainer);
+  
+  $('form').on('submit', function(event) {
+    event.preventDefault();
+    console.log($(this).serialize());
+    $.ajax({
+      type: "POST",
+      url: "http://localhost:8080/tweets/",
+      data: $(this).serialize()
+    });
+  });
+  // const loadTweets = function() {
 
+  // }
 
 });
