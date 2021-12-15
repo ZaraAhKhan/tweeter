@@ -30,7 +30,7 @@ const initialTweets = [
 ];
 
 const createTweetElement = function(tweet) {
-  let time = timeago.format(tweet.created_at)
+  let time = timeago.format(tweet.created_at);
   const tweetElement = `
   <article class ="tweet">
     <header>
@@ -73,16 +73,25 @@ $(document).ready(function() {
   renderTweetElements(tweetContainer);
   
   $('form').on('submit', function(event) {
-    event.preventDefault();
+    event.preventDefault(); //prevent browser from loading another page
     console.log($(this).serialize());
     $.ajax({
       type: "POST",
       url: "http://localhost:8080/tweets/",
       data: $(this).serialize()
     });
+    loadTweets();
+    
   });
-  // const loadTweets = function() {
-
-  // }
+  const loadTweets = function() {
+    $.ajax({
+      url:"http://localhost:8080/tweets/",
+      method:"GET"
+    })
+      .then(function(data) {
+        console.log(data);
+      });
+  };
+  
 
 });
