@@ -3,6 +3,7 @@ article.tweet {
   border-color: #545149;
   margin-top: 50px; 
   border-width:4px ;
+  overflow-wrap: break-word;
 }
 article.tweet:hover {
   box-shadow: 10px 5px 5px #9CACD0;

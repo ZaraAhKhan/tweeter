@@ -62,6 +62,7 @@ $(document).ready(function() {
 
   const renderTweetElements = function(target,initialTweets) {
     //iterate over the initialtweets object
+    initialTweets = initialTweets.reverse();
     for (let tweet of initialTweets) {
       // pass to a function to create a tweet element
       const newElement = createTweetElement(tweet);
