@@ -42,20 +42,16 @@
       </div>
     </nav>
     <header class = "page-header">
-      
       <div class = "image">
-        
-          <img src="/images/profile-hex.png"> 
+        <img src="/images/profile-hex.png"> 
       </div>
       <div class = "name">
-
-          <h2>Your Name</h2>
+        <h2>Zara Khan</h2>
       </div>
-  </header>
+    </header>
 
     <!-- Page-specific (main) content here -->
     <main class="content">
-      
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method = "POST", action ="/tweets/">
@@ -66,34 +62,30 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
-      
-        <section id="tweet-container">
-          <article>
-            <header class = "tweet-header">
+      <section id="tweet-container">
+          <article class ="tweet">
+            <header>
               <span class="twitter-img">
               <span><img src = "https://i.imgur.com/73hZDYK.png"></span>
-              <span id="twitter-name">Newton</span></span>
-              <span id="twitter-handle">@SirIsaac</span>
+              <span class="twitter-name">Newton</span></span>
+              <span class="twitter-handle">@SirIsaac</span>
             </header>
             <br>
-            <span id="tweet">Hello This is my first tweet!</span> 
+            <span class="tweet-content">Hello This is my first tweet!</span> 
               <br>
               <br>
             <hr/>
-          <footer class ="tweet-footer">
+          <footer>
               <span>10 days ago</span> 
-              <span class="tweet-icons">
+              <div class="tweet-icons">
               <span><i class="fa-solid fa-flag"></i></span>
               <span><i class="fa-solid fa-retweet"></i></span>
               <span><i class="fa-solid fa-heart"></i></span>
-              </span>
+              </div>
             </footer>
           </article>
-
         </section>
       </section>
     </main>
-    
   </body>
-  
 </html>

@@ -1,15 +1,15 @@
-#tweet-container {
+article.tweet {
   border:solid;
   border-color: #545149;
   margin-top: 50px; 
   border-width:4px ;
 }
-#tweet-container:hover {
+article.tweet:hover {
   box-shadow: 10px 5px 5px #9CACD0;
 }
 
 
-.tweet-header {
+article.tweet header {
   display: flex;
   justify-content:space-between;
   flex-direction:row;
@@ -25,19 +25,19 @@
   padding-left:10px;
   
 }
-#twitter-name {
+.twitter-name {
   padding-left:25px;
   align-self: center;
   font-weight:300;
   
 }
-#twitter-handle
+.twitter-handle
 {
   padding-right:15px;
   align-self: center;
   opacity:0.5;
 }
-#tweet {
+.tweet-content {
   padding-left: 25px;
   padding-top:25px;
 }
@@ -53,7 +53,7 @@ hr{
   margin-left:10px
 }
 
-.tweet-footer{
+article.tweet footer{
   display:flex;
   justify-content: space-between;
   padding-bottom: 25px;
