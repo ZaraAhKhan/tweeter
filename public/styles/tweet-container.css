@@ -3,11 +3,11 @@
   background-color: #FFD2D2;
   font-weight: 300;
   padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 10px;
-    margin-top: 50px;
-    font-size: medium;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 10px;
+  margin-top: 50px;
+  font-size: medium;
 }
 
 
@@ -16,7 +16,8 @@ article.tweet {
   border-color: #545149;
   margin-top: 50px; 
   border-width:4px ;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
+  
 }
 article.tweet:hover {
   box-shadow: 10px 5px 5px #9CACD0;
