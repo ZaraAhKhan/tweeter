@@ -4,30 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// const initialTweets = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png",
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1639357132082
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd"
-//     },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1639443532082
-//   }
-// ];
+
 const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
@@ -61,14 +38,19 @@ const createTweetElement = function(tweet) {
   return tweetElement;
 };
 
-
-
-
-
-
 $(document).ready(function() {
   $('.error-message').hide();
  
+  $('#tweet-button').click(function() {
+    $('html, body').animate({
+      scrollTop: $("h2").offset().top
+    }, 1000,function() {
+      $('textarea').focus();
+    });
+  });
+  
+  
+  
 
   const renderTweetElements = function(target,initialTweets) {
     //iterate over the initialtweets object
@@ -87,14 +69,14 @@ $(document).ready(function() {
   $('form').on('submit', function(event) {
     event.preventDefault(); //prevent browser from loading another page
     
-    if ($('#tweet-text').val().length === 0) { 
+    if ($('#tweet-text').val().length === 0) {
       $('.error-message').hide('fast','swing');
       $('.error-message').slideDown('fast','swing');
-      $('.error-message').html('<i class="fa fa-times-circle"></i> The tweet not long enough');
+      $('.error-message').html('<i class="fa fa-times-circle"></i> The tweet is not long enough!');
     } else if ($('#tweet-text').val().length > 140) {
       $('.error-message').hide('fast','swing');
       $('.error-message').slideDown('fast','swing');
-      $('.error-message').html('<i class="fa fa-times-circle"></i>The tweet is too  long');
+      $('.error-message').html('<i class="fa fa-times-circle"></i>The tweet is too  long!');
     } else {
       $('.error-message').hide('fast','swing');
       $.ajax({
