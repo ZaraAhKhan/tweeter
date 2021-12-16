@@ -53,6 +53,8 @@ $(document).ready(function() {
   
 
   const renderTweetElements = function(target,initialTweets) {
+
+    
     //iterate over the initialtweets object
     initialTweets = initialTweets.reverse();
     for (let tweet of initialTweets) {
@@ -67,13 +69,16 @@ $(document).ready(function() {
   const tweetContainer = $('#tweet-container');
   
   $('form').on('submit', function(event) {
-    event.preventDefault(); //prevent browser from loading another page
+    //prevent browser from loading another page
+    event.preventDefault(); 
     
-    if ($('#tweet-text').val().length === 0) {
+    // if the tweet is an empty string
+    if ($('#tweet-text').val().length === 0 || ($('#tweet-text').val()).trim().length === 0) { 
       $('.error-message').hide('fast','swing');
       $('.error-message').slideDown('fast','swing');
       $('.error-message').html('<i class="fa fa-times-circle"></i> The tweet is not long enough!');
-    } else if ($('#tweet-text').val().length > 140) {
+      // if the tweet is more that 140 chars
+    } else if ($('#tweet-text').val().length > 140) { 
       $('.error-message').hide('fast','swing');
       $('.error-message').slideDown('fast','swing');
       $('.error-message').html('<i class="fa fa-times-circle"></i>The tweet is too  long!');
@@ -85,8 +90,9 @@ $(document).ready(function() {
         data: $(this).serialize(),
         success: function() {
         //In case the Post tweets was successful, then we will call the load tweets again.
-        
+          
           loadTweets();
+          
         },
         error: function(err) {
           console.log("There was an error in the tweets", err);
@@ -102,6 +108,8 @@ $(document).ready(function() {
             //To empty the container or clear the existing HTML Elements, so that once we get all the tweets, then we display them.
             tweetContainer.empty(); //jQuery function to clear the html elements
             renderTweetElements(tweetContainer,data);
+            $('#tweet-text').val(''); //empty the text area after posting and getting the tweet
+            $('.counter').val('140'); // reset counter to 140
           });
       };
     }
