@@ -28,9 +28,15 @@
 //     "created_at": 1639443532082
 //   }
 // ];
+const escape = function(str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
 const createTweetElement = function(tweet) {
   let time = timeago.format(tweet.created_at);
+  const safeHTML = escape(tweet.content.text);
   const tweetElement = `
   <article class ="tweet">
     <header>
@@ -40,7 +46,7 @@ const createTweetElement = function(tweet) {
       <span class="twitter-handle">${tweet.user.handle}</span>
     </header>
     <br>
-    <span class="tweet-content">${tweet.content.text}</span> 
+    <span class="tweet-content">${safeHTML}</span> 
       <br>
       <br>
     <hr/>
@@ -58,7 +64,11 @@ const createTweetElement = function(tweet) {
 
 
 
+
+
 $(document).ready(function() {
+  $('.error-message').hide();
+ 
 
   const renderTweetElements = function(target,initialTweets) {
     //iterate over the initialtweets object
@@ -77,12 +87,16 @@ $(document).ready(function() {
   $('form').on('submit', function(event) {
     event.preventDefault(); //prevent browser from loading another page
     
-    if ($('#tweet-text').val().length === 0) {
-      alert('Empty tweets are not allowed');
+    if ($('#tweet-text').val().length === 0) { 
+      $('.error-message').hide('fast','swing');
+      $('.error-message').slideDown('fast','swing');
+      $('.error-message').html('<i class="fa fa-times-circle"></i> The tweet not long enough');
     } else if ($('#tweet-text').val().length > 140) {
-      alert('Alas!The tweet was too long!');
+      $('.error-message').hide('fast','swing');
+      $('.error-message').slideDown('fast','swing');
+      $('.error-message').html('<i class="fa fa-times-circle"></i>The tweet is too  long');
     } else {
-    
+      $('.error-message').hide('fast','swing');
       $.ajax({
         type: "POST",
         url: "http://localhost:8080/tweets/",
