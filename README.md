@@ -6,6 +6,10 @@ This responsive web application will aloow the user to tweet their thoughts. The
 
 ##Screenshots
 !["Screenshot of the tweet page on desktop"](https://github.com/ZaraAhKhan/tweeter/blob/master/docs/error_message_1.png?raw=true)
+!["Screenshot of the tweet page on desktop"](https://github.com/ZaraAhKhan/tweeter/blob/master/docs/error_message_1.png?raw=true)
+!["Screenshot of the tweet page on desktop"](https://github.com/ZaraAhKhan/tweeter/blob/master/docs/error_message_1.png?raw=true)
+!["Screenshot of the tweet page on desktop"](https://github.com/ZaraAhKhan/tweeter/blob/master/docs/error_message_1.png?raw=true)
+!["Screenshot of the error message"](https://github.com/ZaraAhKhan/tweeter/blob/master/docs/error_message_1.png?raw=true)
 
 
 ## Getting Started
