@@ -34,6 +34,7 @@
   color:red;
 }
 
+/* specifications for mobile/tablet */
 @media only screen and (max-width: 1024px) {
   .nav-bar {
     background-color:#E58628;

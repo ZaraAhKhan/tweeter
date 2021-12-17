@@ -16,6 +16,8 @@
   display: flex;
   align-self: center;
 }
+
+/* specifications for desktop */
 @media only screen and (min-width: 1024px) {
   .page-header {
     width: 45%;
@@ -25,10 +27,3 @@
   }
 
 }
-
-/* @media only screen and (min-width: 1280px) {
-  .content{
-    margin-left:auto;
-    margin-top:auto;
-  }
-} */

@@ -4,13 +4,14 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
+//function to prevent malicious code to be injected via tweet
 const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
+//function to create an an element which has the tweet details
 const createTweetElement = function(tweet) {
   let time = timeago.format(tweet.created_at);
   const safeHTML = escape(tweet.content.text);
@@ -41,7 +42,7 @@ const createTweetElement = function(tweet) {
 
 $(document).ready(function() {
   $('.error-message').hide();
-  
+  //event handler for write a new tweet button
   $('#tweet-button').click(function() {
     $('.compose-tweet').slideDown();
     $('textarea').focus();
@@ -49,7 +50,6 @@ $(document).ready(function() {
 
   const renderTweetElements = function(target,initialTweets) {
     //iterate over the initialtweets object
-    
     for (let tweet of initialTweets) {
       // pass to a function to create a tweet element
       const newElement = createTweetElement(tweet);
@@ -98,10 +98,12 @@ $(document).ready(function() {
     })
       .then(function(data) {
         //To empty the container or clear the existing HTML Elements, so that once we get all the tweets, then we display them.
-        tweetContainer.empty(); //jQuery function to clear the html elements
+        tweetContainer.empty();
         renderTweetElements(tweetContainer,data);
-        $('#tweet-text').val(''); //empty the text area after posting and getting the tweet
-        $('.counter').val('140'); // reset counter to 140
+        //empty the text area after posting and getting the tweet
+        $('#tweet-text').val('');
+        // reset counter to 140
+        $('.counter').val('140');
       });
   
   };
