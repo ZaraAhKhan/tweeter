@@ -38,20 +38,14 @@ const createTweetElement = function(tweet) {
   return tweetElement;
 };
 
+
 $(document).ready(function() {
   $('.error-message').hide();
   
- 
   $('#tweet-button').click(function() {
-    $('html, body').animate({
-      scrollTop: $("h2").offset().top
-    }, 1000,function() {
-      $('textarea').focus();
-    });
+    $('.compose-tweet').slideDown();
+    $('textarea').focus();
   });
-  
-  
-  
 
   const renderTweetElements = function(target,initialTweets) {
     //iterate over the initialtweets object
@@ -72,12 +66,12 @@ $(document).ready(function() {
     event.preventDefault();
     
     // if the tweet is an empty string
-    if ($('#tweet-text').val().length === 0 || ($('#tweet-text').val()).trim().length === 0) { 
+    if ($('#tweet-text').val().length === 0 || ($('#tweet-text').val()).trim().length === 0) {
       $('.error-message').hide('fast','swing');
       $('.error-message').slideDown('fast','swing');
       $('.error-message').html('<i class="fa fa-times-circle"></i> The tweet is not long enough!');
       // if the tweet is more that 140 chars
-    } else if ($('#tweet-text').val().length > 140) { 
+    } else if ($('#tweet-text').val().length > 140) {
       $('.error-message').hide('fast','swing');
       $('.error-message').slideDown('fast','swing');
       $('.error-message').html('<i class="fa fa-times-circle"></i>The tweet is too  long!');
