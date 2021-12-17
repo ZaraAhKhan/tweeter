@@ -40,6 +40,7 @@ const createTweetElement = function(tweet) {
 
 $(document).ready(function() {
   $('.error-message').hide();
+  
  
   $('#tweet-button').click(function() {
     $('html, body').animate({
@@ -53,15 +54,13 @@ $(document).ready(function() {
   
 
   const renderTweetElements = function(target,initialTweets) {
-
-    
     //iterate over the initialtweets object
-    initialTweets = initialTweets.reverse();
+    
     for (let tweet of initialTweets) {
       // pass to a function to create a tweet element
       const newElement = createTweetElement(tweet);
       // attach the element to the DOM
-      target.append(newElement);
+      target.prepend(newElement);
   
     }
   };
@@ -70,7 +69,7 @@ $(document).ready(function() {
   
   $('form').on('submit', function(event) {
     //prevent browser from loading another page
-    event.preventDefault(); 
+    event.preventDefault();
     
     // if the tweet is an empty string
     if ($('#tweet-text').val().length === 0 || ($('#tweet-text').val()).trim().length === 0) { 
@@ -90,30 +89,27 @@ $(document).ready(function() {
         data: $(this).serialize(),
         success: function() {
         //In case the Post tweets was successful, then we will call the load tweets again.
-          
           loadTweets();
-          
         },
         error: function(err) {
           console.log("There was an error in the tweets", err);
         }
       });
-  
-      const loadTweets = function() {
-        $.ajax({
-          url:"http://localhost:8080/tweets/",
-          method:"GET"
-        })
-          .then(function(data) {
-            //To empty the container or clear the existing HTML Elements, so that once we get all the tweets, then we display them.
-            tweetContainer.empty(); //jQuery function to clear the html elements
-            renderTweetElements(tweetContainer,data);
-            $('#tweet-text').val(''); //empty the text area after posting and getting the tweet
-            $('.counter').val('140'); // reset counter to 140
-          });
-      };
     }
   });
-
+  const loadTweets = function() {
+    $.ajax({
+      url:"http://localhost:8080/tweets/",
+      method:"GET"
+    })
+      .then(function(data) {
+        //To empty the container or clear the existing HTML Elements, so that once we get all the tweets, then we display them.
+        tweetContainer.empty(); //jQuery function to clear the html elements
+        renderTweetElements(tweetContainer,data);
+        $('#tweet-text').val(''); //empty the text area after posting and getting the tweet
+        $('.counter').val('140'); // reset counter to 140
+      });
   
+  };
+  loadTweets();
 });

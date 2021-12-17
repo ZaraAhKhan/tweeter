@@ -18,10 +18,17 @@
 }
 @media only screen and (min-width: 1024px) {
   .page-header {
-    width: 40%;
+    width: 45%;
     margin-left:5vh;
-    margin-right:15 vh;
-    margin-top:25vh;
+    margin-right:18vh;
+    margin-top:20vh;
   }
 
 }
+
+/* @media only screen and (min-width: 1280px) {
+  .content{
+    margin-left:auto;
+    margin-top:auto;
+  }
+} */

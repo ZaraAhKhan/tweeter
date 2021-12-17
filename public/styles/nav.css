@@ -33,3 +33,11 @@
 .fa-angle-double-down {
   color:red;
 }
+
+@media only screen and (max-width: 1024px) {
+  .nav-bar {
+    background-color:#E58628;
+    background-image:url("../images/black-scales.png");
+  }
+
+}
